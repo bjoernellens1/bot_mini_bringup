@@ -185,12 +185,13 @@ local_costmap:
       publish_frequency: 2.0
       global_frame: odom
       robot_base_frame: base_link
-      use_sim_time: True
+      use_sim_time: True #change?
       rolling_window: true
       width: 3
       height: 3
       resolution: 0.05
-      robot_radius: 0.22
+      #robot_radius: 0.22 changed to footprint for more precise apprximation of the robot
+      footprint: "[ [0.06, 0.16], [0.06, -0.16], [-0.31, -0.16], [-0.31, 0.16] ]" # rectangle with [[Front Right], [Front Left], [Rear Left], [Rear Right]]
       plugins: ["voxel_layer", "inflation_layer"]
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
