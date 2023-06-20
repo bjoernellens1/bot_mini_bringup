@@ -14,7 +14,7 @@ slam_toolbox:
     map_frame: map
     base_frame: base_footprint
     scan_topic: /scan
-    mode: localization
+    mode: mapping # was localization
 
     # if you'd like to immediately start continuing a map at a given pose
     # or at the dock, but they are mutually exclusive, if pose is given
@@ -26,9 +26,9 @@ slam_toolbox:
     debug_logging: false
     throttle_scans: 1
     transform_publish_period: 0.02 #if 0 never publishes odometry
-    map_update_interval: 1.0 #was 5.0
-    resolution: 0.05
-    max_laser_range: 200.0 #for rastering images, standard was 20
+    map_update_interval: 5.0 #was 5.0
+    resolution: 0.015 # was 0.05 --> set to 0.015 for 15 mm data resolution according https://de.aliexpress.com/item/1005004178345980.html?gatewayAdapt=glo2deu
+    max_laser_range: 25 #for rastering images, standard was 20 --> according to datsheet 25m https://de.aliexpress.com/item/1005004178345980.html?gatewayAdapt=glo2deu
     minimum_time_interval: 0.5
     transform_timeout: 0.2
     tf_buffer_duration: 30.
